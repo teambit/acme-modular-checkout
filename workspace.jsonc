@@ -3,9 +3,17 @@
  * for full documentation, please see: https://bit.dev/reference/workspace/workspace-json
  **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
-  "teambit.harmony/bit": { "engine": "2.2.18" },
+  "teambit.harmony/bit": {
+    "engine": "2.2.18"
+  },
   "teambit.git/ci": {
-    "sync": { "lanes": ["*"], "mainSync": "pr", "onConflict": "halt" }
+    "sync": {
+      "lanes": [
+        "*"
+      ],
+      "mainSync": "pr",
+      "onConflict": "halt"
+    }
   },
   /**
    * main configuration of the Bit workspace.
