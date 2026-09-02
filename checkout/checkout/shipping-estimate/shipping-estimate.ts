@@ -3,7 +3,7 @@
  * Pure function: no I/O, deterministic.
  */
 export function shippingEstimate(weightKg: number, distanceKm: number): number {
-  const base = 2.5;
+  const base = 3.0;
   const perKg = 1.2;
   const perHundredKm = 0.8;
   const total = base + weightKg * perKg + (distanceKm / 100) * perHundredKm;
