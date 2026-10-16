@@ -19,7 +19,7 @@
     "checkout/checkout-page": {
         "name": "checkout/checkout-page",
         "scope": "acme-modular.checkout",
-        "version": "1ce06f1d530413ff8d142fa9b9e1b82a7afbbd5a",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "checkout/checkout/checkout-page"
     },
@@ -40,7 +40,7 @@
     "checkout/use-checkout": {
         "name": "checkout/use-checkout",
         "scope": "acme-modular.checkout",
-        "version": "c09f82b7fabdf365e7ebbedcccb10fb3d9ccd87d",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "checkout/checkout/use-checkout"
     },
