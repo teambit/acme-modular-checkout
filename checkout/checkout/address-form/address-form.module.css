@@ -1,0 +1,38 @@
+.addressForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large, 16px);
+  max-width: 520px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-medium, 8px);
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small, 4px);
+}
+
+.countryLabel {
+  font-size: var(--typography-sizes-body-small, 14px);
+  font-weight: var(--typography-font-weight-medium, 500);
+  color: var(--colors-text-primary, #212121);
+}
+
+.select {
+  font: inherit;
+  padding: var(--spacing-medium, 8px);
+  border: var(--borders-default-width, 1px) solid var(--borders-default-color, #e0e0e0);
+  border-radius: var(--borders-radius-medium, 8px);
+  background: var(--colors-surface-primary, #fff);
+  color: var(--colors-text-primary, #212121);
+}
+
+.select:focus-visible {
+  outline: var(--borders-focus-width, 2px) solid var(--borders-focus-color, #0b5fff);
+  outline-offset: var(--borders-focus-offset, 2px);
+}

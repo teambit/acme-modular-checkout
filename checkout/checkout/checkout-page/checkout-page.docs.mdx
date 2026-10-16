@@ -1,0 +1,34 @@
+---
+description: The ACME checkout page — address, delivery, payment, review and confirmation.
+labels: ['react', 'page', 'checkout']
+---
+
+`CheckoutPage` composes checkout from every scope: `AddressForm`, `DeliveryOptions` from shipping (2 kg per unit, zone 1), `PaymentMethodPicker` and `CardForm` from payments, and a review with `CheckoutSummary`. Placing the order runs `useCheckout().placeOrder`, which creates the order, pays for it and clears the cart, then shows an "Order placed" confirmation. It reads the cart, so render it inside `CartProvider`.
+
+## In the app
+
+```tsx
+import { CheckoutPage } from '@acme-modular/checkout.checkout.checkout-page';
+import { CartProvider } from '@acme-modular/store.cart.use-cart';
+
+<CartProvider>
+  <CheckoutPage onDone={(order) => navigate(`/orders/${order.id}`)} />
+</CartProvider>
+```
+
+## With a prefilled cart
+
+```tsx
+<CartProvider initialLines={[{ productId: 'p-300', name: 'Desk Lamp', unitPriceCents: 4900, quantity: 12 }]}>
+  <CheckoutPage />
+</CartProvider>
+```
+
+## Against a real backend
+
+```tsx
+import { createHttpClient } from '@acme-modular/platform.utils.http-client';
+
+const client = createHttpClient({ baseUrl: 'https://api.acme.example/v1' });
+<CheckoutPage client={client} />
+```

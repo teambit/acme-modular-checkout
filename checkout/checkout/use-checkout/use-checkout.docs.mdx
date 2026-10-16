@@ -1,0 +1,40 @@
+---
+description: The checkout state machine — address, delivery, payment, review and placing the order.
+labels: ['react', 'hook', 'checkout', 'data']
+---
+
+`useCheckout` drives checkout through `address → delivery → payment → review → placed`. `setAddress` moves on to delivery, `next` and `back` move between completed steps, and `placeOrder` posts the order to `POST /orders`, pays for it with `usePayment`, clears the cart and lands on `placed`. It reads the cart through `useCart`, so it must be used inside `CartProvider`. Without a `client` it talks to an in-memory mock backend.
+
+## Drive a checkout page
+
+```tsx
+import { useCheckout } from '@acme-modular/checkout.checkout.use-checkout';
+
+const checkout = useCheckout();
+if (checkout.step === 'address') return <AddressForm onSubmit={checkout.setAddress} />;
+```
+
+## Place the order
+
+```tsx
+const { placeOrder, placing, error } = useCheckout();
+
+<Button disabled={placing} onClick={() => placeOrder().then((order) => navigate(`/orders/${order.id}`), () => {})}>
+  Place order
+</Button>
+{error && <Alert tone="negative" title="We couldn't place your order">{error.message}</Alert>}
+```
+
+## In tests
+
+```tsx
+import { createHttpClient, createMockTransport } from '@acme-modular/platform.utils.http-client';
+import { CartProvider } from '@acme-modular/store.cart.use-cart';
+
+const echo = (id: string) => async (request: Request) => ({ id, ...(await request.json()) });
+const client = createHttpClient({
+  transport: createMockTransport({ 'POST /orders': echo('o-2001'), 'POST /payments': echo('pay-1') }),
+});
+const wrapper = ({ children }) => <CartProvider initialLines={lines}>{children}</CartProvider>;
+renderHook(() => useCheckout({ client }), { wrapper });
+```

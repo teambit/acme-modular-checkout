@@ -9,12 +9,55 @@
  */
 
 {
+    "checkout/address-form": {
+        "name": "checkout/address-form",
+        "scope": "acme-modular.checkout",
+        "version": "6121076932bb358f712f423c2c8c5361b95861c0",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/address-form",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "checkout/checkout-page": {
+        "name": "checkout/checkout-page",
+        "scope": "acme-modular.checkout",
+        "version": "1ce06f1d530413ff8d142fa9b9e1b82a7afbbd5a",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/checkout-page",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "checkout/checkout-summary": {
+        "name": "checkout/checkout-summary",
+        "scope": "acme-modular.checkout",
+        "version": "798c54ec7d3c3c3fdc213f11d797d0066fd91e67",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/checkout-summary",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
     "checkout/shipping-estimate": {
         "name": "checkout/shipping-estimate",
         "scope": "acme-modular.checkout",
-        "version": "0.0.2",
+        "version": "857c20233248538d85f7dd621a85c47547e22a6f",
         "mainFile": "index.ts",
         "rootDir": "checkout/checkout/shipping-estimate"
     },
-    "$schema-version": "17.0.0"
+    "checkout/use-checkout": {
+        "name": "checkout/use-checkout",
+        "scope": "acme-modular.checkout",
+        "version": "c09f82b7fabdf365e7ebbedcccb10fb3d9ccd87d",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/use-checkout",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "$schema-version": "17.0.0",
+    "_bit_lane": {
+        "id": {
+            "name": "org-scale-content",
+            "scope": "acme-modular.platform"
+        },
+        "exported": true
+    }
 }
