@@ -1,0 +1,31 @@
+---
+description: A validated shipping address form with US ZIP checks.
+labels: ['react', 'ui', 'checkout', 'form', 'address']
+---
+
+`AddressForm` collects a shipping address and validates it on submit: every required field must be filled, and a US address needs a 5-digit ZIP code. It hands back a complete `Address` from the platform customer entity, generating an `id` when one is missing and defaulting the `label` to "Shipping". Accounts reuse it to add addresses to the address book.
+
+## A new address at checkout
+
+```tsx
+import { AddressForm } from '@acme-modular/checkout.checkout.address-form';
+
+<AddressForm onSubmit={setAddress} submitLabel="Continue to delivery" />
+```
+
+## Edit a saved address
+
+```tsx
+import { mockCustomer } from '@acme-modular/platform.entities.customer';
+
+<AddressForm value={mockCustomer().defaultAddress} onSubmit={(address) => updateCustomer(customer.withAddress(address))} />
+```
+
+## Validate without the form
+
+```ts
+import { validateAddress } from '@acme-modular/checkout.checkout.address-form';
+
+validateAddress({ name: 'Jordan', line1: '1 Main St', city: 'Austin', region: 'TX', postalCode: '7870', country: 'US' });
+// { postalCode: 'Enter a 5-digit ZIP code' }
+```

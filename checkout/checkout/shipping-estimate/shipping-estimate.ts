@@ -9,10 +9,3 @@ export function shippingEstimate(weightKg: number, distanceKm: number): number {
   const total = base + weightKg * perKg + (distanceKm / 100) * perHundredKm;
   return Math.round(total * 100) / 100;
 }
-
-// phase B check: webhook -> relay -> repository_dispatch
-// second snap so the new webhook fires
-
-// org access token export check
-
-// write-token export check
