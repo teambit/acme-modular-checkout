@@ -9,12 +9,40 @@
  */
 
 {
+    "checkout/address-form": {
+        "name": "checkout/address-form",
+        "scope": "acme-modular.checkout",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/address-form"
+    },
+    "checkout/checkout-page": {
+        "name": "checkout/checkout-page",
+        "scope": "acme-modular.checkout",
+        "version": "1ce06f1d530413ff8d142fa9b9e1b82a7afbbd5a",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/checkout-page"
+    },
+    "checkout/checkout-summary": {
+        "name": "checkout/checkout-summary",
+        "scope": "acme-modular.checkout",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/checkout-summary"
+    },
     "checkout/shipping-estimate": {
         "name": "checkout/shipping-estimate",
         "scope": "acme-modular.checkout",
-        "version": "0.0.2",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "checkout/checkout/shipping-estimate"
+    },
+    "checkout/use-checkout": {
+        "name": "checkout/use-checkout",
+        "scope": "acme-modular.checkout",
+        "version": "c09f82b7fabdf365e7ebbedcccb10fb3d9ccd87d",
+        "mainFile": "index.ts",
+        "rootDir": "checkout/checkout/use-checkout"
     },
     "$schema-version": "17.0.0"
 }

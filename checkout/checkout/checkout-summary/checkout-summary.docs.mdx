@@ -1,0 +1,30 @@
+---
+description: The checkout order summary — lines, subtotal, bulk discount, shipping and total.
+labels: ['react', 'ui', 'checkout', 'summary']
+---
+
+`CheckoutSummary` shows what the customer is about to pay. It totals the cart with `summarizeOrder` and the store's bulk deal (10 or more units take 10% off), adds the chosen shipping price and renders every amount with `PriceTag`. Before delivery is chosen, shipping reads "Chosen at delivery".
+
+## On the review step
+
+```tsx
+import { CheckoutSummary } from '@acme-modular/checkout.checkout.checkout-summary';
+import { useCart } from '@acme-modular/store.cart.use-cart';
+
+const { lines } = useCart();
+<CheckoutSummary lines={lines} shippingCents={delivery.cents} />
+```
+
+## Before delivery is chosen
+
+```tsx
+<CheckoutSummary lines={lines} />
+```
+
+## Totals in cents
+
+```ts
+import { checkoutTotals } from '@acme-modular/checkout.checkout.checkout-summary';
+
+checkoutTotals(lines, 900); // { subtotalCents, discountCents, shippingCents, totalCents }
+```
